@@ -64,7 +64,7 @@ form.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
 
     try {
-        const response = await fetch('https://med-rec-api.onrender.com', {
+        const response = await fetch('https://med-rec-api.onrender.com/recommend', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
