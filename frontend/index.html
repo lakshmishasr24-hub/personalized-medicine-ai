@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI MedRec Pro | Comprehensive Health Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container expanded">
+        <header>
+            <h1>AI MedRec Pro <span>🧬</span></h1>
+            <p>Precise Personalized Medicine & Risk Analysis</p>
+        </header>
+
+        <main>
+            <form id="health-form" class="progressive-form">
+                <!-- Step 1: Basic Info -->
+                <section class="form-step glass active" data-step="1">
+                    <div class="step-header">
+                        <span class="step-num">01</span>
+                        <h2>Basic Profile</h2>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Age</label>
+                            <input type="number" id="age" required placeholder="Years">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <select id="gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Weight (kg)</label>
+                            <input type="number" id="weight" required placeholder="e.g. 70">
+                        </div>
+                        <div class="form-group">
+                            <label>Height (cm)</label>
+                            <input type="number" id="height" required placeholder="e.g. 175">
+                        </div>
+                        <div class="form-group">
+                            <label>Blood Group</label>
+                            <select id="blood_group">
+                                <option value="A+">A+</option>
+                                <option value="B+">B+</option>
+                                <option value="O+">O+</option>
+                                <option value="AB+">AB+</option>
+                                <option value="A-">A-</option>
+                                <option value="B-">B-</option>
+                                <option value="O-">O-</option>
+                                <option value="AB-">AB-</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="step-nav">
+                        <button type="button" class="next-btn">Medical History →</button>
+                    </div>
+                </section>
+
+                <!-- Step 2: Medical History -->
+                <section class="form-step glass" data-step="2">
+                    <div class="step-header">
+                        <span class="step-num">02</span>
+                        <h2>Medical History</h2>
+                    </div>
+                    <div class="form-group">
+                        <label>Existing Conditions (comma separated)</label>
+                        <input type="text" id="conditions" placeholder="e.g. Diabetes, Hypertension">
+                    </div>
+                    <div class="form-group">
+                        <label>Family Medical History</label>
+                        <input type="text" id="family_history" placeholder="e.g. Heart Disease">
+                    </div>
+                    <div class="form-group">
+                        <label>Previous Surgeries / Allergies</label>
+                        <input type="text" id="allergies" placeholder="e.g. Penicillin Allergy">
+                    </div>
+                    <div class="step-nav">
+                        <button type="button" class="prev-btn">Back</button>
+                        <button type="button" class="next-btn">Symptoms & Lifestyle →</button>
+                    </div>
+                </section>
+
+                <!-- Step 3: Symptoms & Lifestyle -->
+                <section class="form-step glass" data-step="3">
+                    <div class="step-header">
+                        <span class="step-num">03</span>
+                        <h2>Symptoms & Lifestyle</h2>
+                    </div>
+                    <div class="form-group">
+                        <label>Current Symptoms (comma separated)</label>
+                        <input type="text" id="symptoms" placeholder="e.g. chest pain, fatigue">
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Smoking Status</label>
+                            <select id="smoking">
+                                <option value="No">Non-Smoker</option>
+                                <option value="Yes">Smoker</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Alcohol</label>
+                            <select id="alcohol">
+                                <option value="None">None</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="Heavy">Heavy</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Exercise</label>
+                            <select id="exercise">
+                                <option value="None">Sedentary</option>
+                                <option value="Moderate">1-3 times/week</option>
+                                <option value="Active">Daily</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Sleep (Hours)</label>
+                            <input type="number" id="sleep" value="7">
+                        </div>
+                    </div>
+                    <div class="step-nav">
+                        <button type="button" class="prev-btn">Back</button>
+                        <button type="button" class="next-btn">Clinical Tests →</button>
+                    </div>
+                </section>
+
+                <!-- Step 4: Clinical Tests -->
+                <section class="form-step glass" data-step="4">
+                    <div class="step-header">
+                        <span class="step-num">04</span>
+                        <h2>Clinical Test Results</h2>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Blood Pressure (Systolic)</label>
+                            <input type="number" id="bp_sys" placeholder="e.g. 120">
+                        </div>
+                        <div class="form-group">
+                            <label>Blood Pressure (Diastolic)</label>
+                            <input type="number" id="bp_dia" placeholder="e.g. 80">
+                        </div>
+                        <div class="form-group">
+                            <label>Blood Sugar (mg/dL)</label>
+                            <input type="number" id="sugar" placeholder="e.g. 100">
+                        </div>
+                        <div class="form-group">
+                            <label>Cholesterol</label>
+                            <input type="number" id="cholesterol" placeholder="e.g. 200">
+                        </div>
+                        <div class="form-group">
+                            <label>Heart Rate (BPM)</label>
+                            <input type="number" id="heart_rate" placeholder="e.g. 72">
+                        </div>
+                        <div class="form-group">
+                            <label>Oxygen (%)</label>
+                            <input type="number" id="oxygen" value="98">
+                        </div>
+                    </div>
+                    <div class="step-nav">
+                        <button type="button" class="prev-btn">Back</button>
+                        <button type="submit" id="submit-btn" class="glow-btn">Run AI Analysis</button>
+                    </div>
+                </section>
+            </form>
+
+            <section id="result-section" class="result-section glass hidden">
+                <div class="result-header">
+                    <h2>AI Recommendation Result</h2>
+                    <div id="risk-badge" class="badge">Low Risk</div>
+                </div>
+                
+                <div class="result-dashboard">
+                    <div class="main-prediction">
+                        <h3>Predicted Condition</h3>
+                        <p id="disease-type">Processing...</p>
+                        <div class="risk-meter">
+                            <div class="progress-bar"><div id="risk-fill" class="progress-fill"></div></div>
+                            <p id="risk-percent">0%</p>
+                        </div>
+                    </div>
+
+                    <div class="explanation-card">
+                        <h3><span class="icon">🔍</span> Why this recommendation?</h3>
+                        <ul id="explanation-list"></ul>
+                    </div>
+
+                    <div class="detail-grid">
+                        <div class="detail-box">
+                            <h3>Treatment Plan</h3>
+                            <p id="treatment-text">--</p>
+                        </div>
+                        <div class="detail-box">
+                            <h3>Medicines</h3>
+                            <ul id="medication-list"></ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="disclaimer">⚠️ demo only. always consult a doctor.</p>
+                <button onclick="location.reload()" class="reset-btn">New Assessment</button>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
