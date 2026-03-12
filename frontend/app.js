@@ -37,20 +37,20 @@ form.addEventListener('submit', async (e) => {
         weight: parseFloat(document.getElementById('weight').value),
         height: parseFloat(document.getElementById('height').value),
         blood_group: document.getElementById('blood_group').value,
-        
+
         existing_conditions: document.getElementById('conditions').value.split(',').map(s => s.trim()).filter(s => s),
         family_history: document.getElementById('family_history').value.split(',').map(s => s.trim()).filter(s => s),
-        previous_surgeries: [], 
+        previous_surgeries: [],
         allergies: document.getElementById('allergies').value.split(',').map(s => s.trim()).filter(s => s),
-        
+
         symptoms: document.getElementById('symptoms').value.split(',').map(s => s.trim()).filter(s => s),
-        
+
         smoking_status: document.getElementById('smoking').value,
         alcohol_consumption: document.getElementById('alcohol').value,
         exercise_frequency: document.getElementById('exercise').value,
         sleep_hours: parseInt(document.getElementById('sleep').value),
         diet_type: "Balanced", // Defaulted for simplicity in UI
-        
+
         blood_pressure_sys: parseInt(document.getElementById('bp_sys').value || 120),
         blood_pressure_dia: parseInt(document.getElementById('bp_dia').value || 80),
         blood_sugar: parseInt(document.getElementById('sugar').value || 100),
@@ -64,7 +64,7 @@ form.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
 
     try {
-        const response = await fetch('http://localhost:8000/recommend', {
+        const response = await fetch('https://med-rec-api.onrender.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -86,14 +86,14 @@ form.addEventListener('submit', async (e) => {
 function displayResults(result) {
     form.classList.add('hidden');
     resultSection.classList.remove('hidden');
-    
+
     document.getElementById('disease-type').textContent = result.disease_prediction;
     document.getElementById('treatment-text').textContent = result.recommended_treatment;
-    
+
     const score = Math.round(result.risk_score * 100);
     document.getElementById('risk-percent').textContent = `${score}%`;
     document.getElementById('risk-fill').style.width = `${score}%`;
-    
+
     // Explanation list
     const explList = document.getElementById('explanation-list');
     explList.innerHTML = '';
