@@ -171,15 +171,28 @@
             </form>
 
             <section id="result-section" class="result-section glass hidden">
-                <div class="result-header">
-                    <h2>AI Recommendation Result</h2>
-                    <div id="risk-badge" class="badge">Low Risk</div>
+                <div class="result-header" style="border-bottom: 2px solid var(--accent); padding-bottom: 1rem; margin-bottom: 1.5rem; text-align: left;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h2 style="font-family: 'Georgia', serif; letter-spacing: 1px; margin: 0;">Clinical Assessment Report</h2>
+                        <div id="risk-badge" class="badge">Low Risk</div>
+                    </div>
+                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem;">Report Generated: <span id="report-date">--</span></p>
                 </div>
                 
                 <div class="result-dashboard">
+                    <div class="patient-summary" style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+                        <h3 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); margin-bottom: 0.5rem;">Patient Details</h3>
+                        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; font-family: monospace;">
+                            <div><strong>Age:</strong> <span id="res-age">--</span></div>
+                            <div><strong>Gender:</strong> <span id="res-gender">--</span></div>
+                            <div><strong>BMI:</strong> <span id="res-bmi">--</span></div>
+                            <div><strong>BP:</strong> <span id="res-bp">--</span></div>
+                        </div>
+                    </div>
+
                     <div class="main-prediction">
-                        <h3>Predicted Condition</h3>
-                        <p id="disease-type">Processing...</p>
+                        <h3 style="font-family: 'Georgia', serif;">Predicted Condition</h3>
+                        <p id="disease-type" style="font-family: 'Georgia', serif; font-size: 1.8rem; color: #fff;">Processing...</p>
                         <div class="risk-meter">
                             <div class="progress-bar"><div id="risk-fill" class="progress-fill"></div></div>
                             <p id="risk-percent">0%</p>

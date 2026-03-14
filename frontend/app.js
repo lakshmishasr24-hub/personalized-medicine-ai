@@ -87,6 +87,28 @@ function displayResults(result) {
     form.classList.add('hidden');
     resultSection.classList.remove('hidden');
 
+    const today = new Date();
+    document.getElementById('report-date').textContent = today.toLocaleDateString() + ' ' + today.toLocaleTimeString();
+
+    // Populate Patient Summary
+    const age = document.getElementById('age').value || '--';
+    const gender = document.getElementById('gender').value || '--';
+    const weight = parseFloat(document.getElementById('weight').value);
+    const height = parseFloat(document.getElementById('height').value);
+    const bpSys = document.getElementById('bp_sys').value || '120';
+    const bpDia = document.getElementById('bp_dia').value || '80';
+    
+    let bmi = '--';
+    if (weight && height) {
+        const heightM = height / 100;
+        bmi = (weight / (heightM * heightM)).toFixed(1);
+    }
+    
+    document.getElementById('res-age').textContent = age;
+    document.getElementById('res-gender').textContent = gender;
+    document.getElementById('res-bmi').textContent = bmi;
+    document.getElementById('res-bp').textContent = `${bpSys}/${bpDia}`;
+
     document.getElementById('disease-type').textContent = result.disease_prediction;
     document.getElementById('treatment-text').textContent = result.recommended_treatment;
 
