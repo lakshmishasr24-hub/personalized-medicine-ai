@@ -113,7 +113,8 @@ button {
 }
 
 @media print {
-    body { background: white !important; color: black !important; font-family: 'Georgia', serif !important; }
+    body { background: white !important; color: black !important; font-family: 'Georgia', serif !important; display: block !important; height: auto !important; min-height: auto !important; padding: 0 !important; }
+    .container { display: block !important; max-width: 100% !important; margin: 0 !important; padding: 0 !important; }
     .floating-shapes, .result-actions, .disclaimer, header { display: none !important; }
     .glass { background: none; border: 1px solid #ddd !important; box-shadow: none; padding: 2rem !important; border-radius: 0; }
     .result-dashboard { padding: 0; }
