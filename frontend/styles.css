@@ -119,10 +119,10 @@ button {
     .result-dashboard { padding: 0; }
     .badge { background: none; color: black !important; border: 2px solid black; print-color-adjust: exact; }
     #risk-fill { background: #333 !important; print-color-adjust: exact; }
-    /* Force print visibility for the active section */
-    .form-step { display: none !important; }
-    #result-section { display: block !important; }
-    
+    /* Force print visibility for the entire form and result section */
+    form, .form-step { display: block !important; margin-bottom: 2rem; }
+    #result-section { display: block !important; margin-top: 2rem; border-top: 2px solid #000; padding-top: 2rem; }
+    .step-nav { display: none !important; }
     .detail-box, .patient-summary { border: 1px solid #ccc !important; background: transparent !important; color: black !important; margin-bottom: 1.5rem; }
     h2, h3 { color: black !important; border-bottom: none !important; }
     .result-header { border-bottom: 2px solid #000 !important; }
